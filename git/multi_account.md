@@ -13,7 +13,7 @@ $ ssh-keygen -t rsa -b 4096 -C "이메일" -f ~/.ssh/id_rsa-계정
 $ cat ~/.ssh/id_rsa-계정.pub
 ```
 > github.com -> settings -> ssh 추가  
-
+ 
 
 #### 로컬 컴퓨터에 ssh 커스텀 Host 추가
 ```
