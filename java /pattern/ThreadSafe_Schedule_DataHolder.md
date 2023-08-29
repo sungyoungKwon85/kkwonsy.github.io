@@ -23,15 +23,19 @@ public interface Task<T> {
     T task();
 }
 ```
+
 <br>
+
 - CallbackTask
 ```
 public interface CallbackTask<T> extends Task<T> {
     void callback(@Nonnull T result);
 }
 ```
+
 <br>
-- SchedulingCallbackTask
+
+- SchedulingCallbackTask  
 ```
 public interface SchedulingCallbackTask<T> extends CallbackTask<T> {
     Trigger schedule();
@@ -47,6 +51,7 @@ public interface SchedulingCallbackTask<T> extends CallbackTask<T> {
 }
 ```
 <br>
+
 - AbstractSchedulingTaskExecutor
 ```
 @ThreadSafe
@@ -96,6 +101,7 @@ public abstract class AbstractSchedulingTaskExecutor<T> implements SchedulingCal
 }
 ```
 <br>
+
 - HoldingResultTask
 ```
 public interface HoldingResultTask<T> extends Task<T> {
@@ -109,6 +115,7 @@ public interface HoldingResultTask<T> extends Task<T> {
 }
 ```
 <br>
+
 - AbstractHoldingResultSchedulingTaskExecutor
 ```
 @ThreadSafe
@@ -143,6 +150,7 @@ public abstract class AbstractHoldingResultSchedulingTaskExecutor<T> extends Abs
 }
 ```
 <br>
+
 - SchedulingConfiguration
 ```
 @Configuration
@@ -186,6 +194,7 @@ public class SchedulingConfiguration implements SchedulingConfigurer {
 }
 ```
 <br>
+
 - MyAService
 ```
 @Service
@@ -220,7 +229,8 @@ public class MyAService extends AbstractHoldingResultSchedulingTaskExecutor<List
     }
 ```
 <br>
-- 
+
+- MyAService
 ```
 public interface MyAService {
 
@@ -233,7 +243,8 @@ public interface MyAService {
 }
 ```
 <br>
-- 
+
+- MyBServiceImpl
 ```
 @Service
 @Slf4j
